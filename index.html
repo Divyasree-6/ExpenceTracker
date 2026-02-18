@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2 class="logo">💰 Expense Tracker</h2>
+            <nav>
+                <button class="nav-btn active" data-view="dashboard">📊 Dashboard</button>
+                <button class="nav-btn" data-view="expenses">💳 Expenses</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div id="dashboard" class="view">
+                <h1>Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="stat-label">Total Balance</p>
+                        <h2 class="stat-value" id="totalBalance">$0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Total Expenses</p>
+                        <h2 class="stat-value" id="totalExpenses">$0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Transactions</p>
+                        <h2 class="stat-value" id="transactionCount">0</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Recent Transactions</h3>
+                    <div id="recentTransactions" class="transactions-list"></div>
+                </div>
+            </div>
+
+            <div id="expenses" class="view hidden">
+                <h1>Expenses</h1>
+                <div class="card">
+                    <h3>Add New Expense</h3>
+                    <form id="expenseForm" class="expense-form">
+                        <input type="number" id="amount" placeholder="Amount" required step="0.01">
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <input type="text" id="description" placeholder="Description" required>
+                        <button type="submit" class="add-btn">Add Expense</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>All Transactions</h3>
+                    <div id="allTransactions" class="transactions-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
